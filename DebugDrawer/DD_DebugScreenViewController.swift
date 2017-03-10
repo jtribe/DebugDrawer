@@ -1,6 +1,6 @@
 
 /*
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright 2017 jtribe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -16,7 +16,7 @@ IN THE SOFTWARE.
 
 import UIKit
 
-class DD_DrawViewController: UIViewController {
+class DD_DebugScreenViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +25,10 @@ class DD_DrawViewController: UIViewController {
 
 	fileprivate func populateOutlets(){
 		title = Bundle.main.name() + " " + Bundle.main.versionNumber() + " (\(Bundle.main.buildNumber()))"
-		navigationItem.leftBarButtonItem = UIBarButtonItem.squareItemWithImage(image: UIImage(named: "DD_CrossIcon"), target: self, action: #selector(closeDebugDraw))
+		navigationItem.leftBarButtonItem = UIBarButtonItem.squareItemWithImage(image: UIImage(named: "DD_CrossIcon"), target: self, action: #selector(closeDebugScreen))
 	}
 	
-	@objc fileprivate func closeDebugDraw() {
+	@objc fileprivate func closeDebugScreen() {
 		dismiss(animated: true, completion: nil)
 	}
 	

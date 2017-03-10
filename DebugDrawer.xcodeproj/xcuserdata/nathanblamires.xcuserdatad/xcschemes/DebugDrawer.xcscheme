@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D0CACC21E72218C0018037A"
-               BuildableName = "DebugDraw.app"
-               BlueprintName = "DebugDraw"
-               ReferencedContainer = "container:DebugDraw.xcodeproj">
+               BlueprintIdentifier = "8D0CACFE1E725A430018037A"
+               BuildableName = "DebugDrawer.app"
+               BlueprintName = "DebugDrawer"
+               ReferencedContainer = "container:DebugDrawer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D0CACC21E72218C0018037A"
-            BuildableName = "DebugDraw.app"
-            BlueprintName = "DebugDraw"
-            ReferencedContainer = "container:DebugDraw.xcodeproj">
+            BlueprintIdentifier = "8D0CACFE1E725A430018037A"
+            BuildableName = "DebugDrawer.app"
+            BlueprintName = "DebugDrawer"
+            ReferencedContainer = "container:DebugDrawer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D0CACC21E72218C0018037A"
-            BuildableName = "DebugDraw.app"
-            BlueprintName = "DebugDraw"
-            ReferencedContainer = "container:DebugDraw.xcodeproj">
+            BlueprintIdentifier = "8D0CACFE1E725A430018037A"
+            BuildableName = "DebugDrawer.app"
+            BlueprintName = "DebugDrawer"
+            ReferencedContainer = "container:DebugDrawer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D0CACC21E72218C0018037A"
-            BuildableName = "DebugDraw.app"
-            BlueprintName = "DebugDraw"
-            ReferencedContainer = "container:DebugDraw.xcodeproj">
+            BlueprintIdentifier = "8D0CACFE1E725A430018037A"
+            BuildableName = "DebugDrawer.app"
+            BlueprintName = "DebugDrawer"
+            ReferencedContainer = "container:DebugDrawer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

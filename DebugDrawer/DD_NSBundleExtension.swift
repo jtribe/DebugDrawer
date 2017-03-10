@@ -1,6 +1,6 @@
 
 /*
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright 2017 jtribe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -16,30 +16,18 @@ IN THE SOFTWARE.
 
 import UIKit
 
-class DD_MessageView: UIView {
+extension Bundle {
 
-	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var versionLabel: UILabel!
-	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		layer.cornerRadius = 10.0
-		populateOutlets()
+	func name() -> String {
+		return infoDictionary?["CFBundleName"] as? String ?? "Unknown"
 	}
 	
-	func populateOutlets(){
-		nameLabel.text = Bundle.main.name()
-		versionLabel.text = "Version \(Bundle.main.versionNumber()) (\(Bundle.main.buildNumber()))"
-	}
-
-	func hide() {
-		alpha = 0
-		transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+	func versionNumber() -> String {
+		return infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
 	}
 	
-	func show() {
-		alpha = 1
-		transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+	func buildNumber() -> String {
+		return infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"
 	}
 	
 }

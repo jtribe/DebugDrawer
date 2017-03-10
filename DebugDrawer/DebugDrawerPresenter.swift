@@ -1,6 +1,6 @@
 
 /*
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright 2017 jtribe>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -29,17 +29,12 @@ IN THE SOFTWARE.
 
 import UIKit
 
-class DebugDrawPresenter {
+class DebugDrawerPresenter {
 	
-	static let sharedInstance = DebugDrawPresenter()
+	static let sharedInstance = DebugDrawerPresenter()
 	
-	var typeEvaluation: (Void) -> (DebugDrawType) = {
-		#if DEBUG
-			return .debugDraw
-		#else
-			return .debugMessage
-		#endif
-	}
+	var debugConfiguration: DebugScreenType = .fullScreen
+	var releaseConfiguration: DebugScreenType = .popoverMessage
 	
 	func listenForGestureOn(view: UIView?){
 		let tap = UITapGestureRecognizer(target: self, action: #selector(present))
@@ -50,27 +45,24 @@ class DebugDrawPresenter {
 	// MARK: Presentation Methods
 	
 	@objc func present(){
-		let type = typeEvaluation()
-		if type == .debugDraw {
-			presentDebugDraw()
-		} else if type == .debugMessage {
-			presentDebugMessage()
-		}
+		#if DEBUG
+			(debugConfiguration == .fullScreen) ? presentFullScreen() : presentPopoverMessage()
+		#else
+			(releaseConfiguration == .fullScreen) ? presentFullScreen() : presentPopoverMessage()
+		#endif
 	}
 	
-	// used in debug
-	fileprivate func presentDebugDraw() {
+	fileprivate func presentFullScreen() {
 		if let currentViewController = UIApplication.topViewController(),
-			let debugViewController = UIStoryboard(name: "DebugDraw", bundle: nil).instantiateInitialViewController() {
+			let debugViewController = UIStoryboard(name: "DebugDrawer", bundle: nil).instantiateInitialViewController() {
 			currentViewController.present(debugViewController, animated: true, completion: nil)
 		}
 	}
 	
-	// used in producation
-	fileprivate func presentDebugMessage() {
+	fileprivate func presentPopoverMessage() {
 		
 		guard let window = UIApplication.shared.keyWindow,
-			let messageView = UINib(nibName: "DD_MessageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? DD_MessageView else {
+			let messageView = UINib(nibName: "DD_DebugPopoverView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? DD_DebugPopoverView else {
 			return
 		}
 

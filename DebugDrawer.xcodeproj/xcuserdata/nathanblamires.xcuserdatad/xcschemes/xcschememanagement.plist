@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DebugDraw.xcscheme</key>
+		<key>DebugDrawer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8D0CACC21E72218C0018037A</key>
+		<key>8D0CACFE1E725A430018037A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

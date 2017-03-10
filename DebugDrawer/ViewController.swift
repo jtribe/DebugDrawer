@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func presentDebugDraw() {
-		DebugDrawPresenter.sharedInstance.present()
+		DebugDrawerPresenter.sharedInstance.present()
 	}
 
 }

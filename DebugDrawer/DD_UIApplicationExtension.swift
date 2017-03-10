@@ -1,6 +1,6 @@
 
 /*
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright 2017 jtribe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -16,18 +16,20 @@ IN THE SOFTWARE.
 
 import UIKit
 
-extension Bundle {
-
-	func name() -> String {
-		return infoDictionary?["CFBundleName"] as? String ?? "Unknown"
-	}
+extension UIApplication {
 	
-	func versionNumber() -> String {
-		return infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+	class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+		if let navigationController = controller as? UINavigationController {
+			return topViewController(controller: navigationController.visibleViewController)
+		}
+		if let tabController = controller as? UITabBarController {
+			if let selected = tabController.selectedViewController {
+				return topViewController(controller: selected)
+			}
+		}
+		if let presented = controller?.presentedViewController {
+			return topViewController(controller: presented)
+		}
+		return controller
 	}
-	
-	func buildNumber() -> String {
-		return infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"
-	}
-	
 }

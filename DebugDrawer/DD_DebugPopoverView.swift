@@ -1,6 +1,6 @@
 
 /*
-Copyright <YEAR> <COPYRIGHT HOLDER>
+Copyright 2017 jtribe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -16,16 +16,30 @@ IN THE SOFTWARE.
 
 import UIKit
 
-extension UIBarButtonItem {
+class DD_DebugPopoverView: UIView {
+
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var versionLabel: UILabel!
 	
-	static func squareItemWithImage(image: UIImage?, target: AnyObject?, action: Selector) -> UIBarButtonItem {
-		let button = UIButton(type: .system)
-		button.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-		button.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
-		button.addTarget(target, action: action, for: .touchUpInside)
-		button.tintColor = UIColor.black
-		button.imageEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
-		return UIBarButtonItem(customView: button)
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		layer.cornerRadius = 10.0
+		populateOutlets()
+	}
+	
+	func populateOutlets(){
+		nameLabel.text = Bundle.main.name()
+		versionLabel.text = "Version \(Bundle.main.versionNumber()) (\(Bundle.main.buildNumber()))"
+	}
+
+	func hide() {
+		alpha = 0
+		transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+	}
+	
+	func show() {
+		alpha = 1
+		transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 	}
 	
 }

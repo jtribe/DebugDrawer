@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-431" y="146"/>
         </scene>
-        <!--Draw View Controller-->
+        <!--Debug Screen View Controller-->
         <scene sceneID="iaE-xh-NGi">
             <objects>
-                <viewController id="xRf-I1-Uyo" customClass="DD_DrawViewController" customModule="DebugDraw" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xRf-I1-Uyo" customClass="DD_DebugScreenViewController" customModule="DebugDrawer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FLG-11-y1J"/>
                         <viewControllerLayoutGuide type="bottom" id="08y-dJ-6sr"/>
