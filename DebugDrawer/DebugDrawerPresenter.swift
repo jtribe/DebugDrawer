@@ -18,13 +18,13 @@ IN THE SOFTWARE.
 // IMPORTANT
 //
 // Setup:
-// 1. Drag the group of files "Reusable Debug Draw" into your project
-// 2. Setup the gesture listener by adding "DebugDrawPresenter.sharedInstance.listenForGestureOn(view: window)" to AppDelegate
-// 3. You can now tap 5 times anywhere to present the DebugDraw
+// 1. Drag the group of files "Reusable Debug Drawer" into your project
+// 2. Setup the gesture listener by adding "DebugDrawerPresenter.sharedInstance.listenForGestureOn(view: window)" to AppDelegate
+// 3. You can now tap 5 times anywhere to present the DebugDrawer
 //
 // Notes
-// - To change how the app decides weather to show the debug screen, or just a popover message, overide "typeEvaluation" with your own condition checking
-// - To add things to the debug draw, simply edit the "DD_DrawViewController.swift" and the "DebugDraw.storyboard"
+// - You can edit the values of "debugConfiguration" and "releaseConfiguration" to specify weather to display the full screen or popover message
+// - To add things to the debug draw, simply edit the "DD_DebugScreenViewController.swift" and the "DebugDrawer.storyboard"
 //
 
 import UIKit
